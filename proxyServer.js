@@ -28,12 +28,30 @@ app.get("/getPUUID", async (req, res) => {
 
     const PUUID = await axios.get(`https://${region}/riot/account/v1/accounts/by-riot-id/${gameName}/${tag}${APIParam}`)
     .then(res => {
-        console.log(res.data.puuid);
         return res.data.puuid;
     }).catch((error) => {
         console.log(`ERROR: ${error}`);
     });
     res.json(PUUID)
+});
+
+app.get("/getRiotID", async (req, res) => {
+    const queries = req.query;
+    if(!queries.region) {
+        res.json("no region provided")
+    } else if(!queries.PUUID) {
+        res.json("no PUUID provided")
+    }
+    const region = queries.region;
+    const PUUID = queries.PUUID;
+
+    const RiotID = await axios.get(`https://${region}/riot/account/v1/accounts/by-puuid/${PUUID}${APIParam}`)
+    .then(res => {
+        return `${res.data.gameName}#${res.data.tagLine}`;
+    }).catch((error) => {
+        console.log(`ERROR: ${error}`);
+    });
+    res.json(RiotID)
 });
 
 app.listen(3000, function () {
