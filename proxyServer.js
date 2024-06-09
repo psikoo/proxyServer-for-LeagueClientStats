@@ -7,7 +7,7 @@ var app = express();
 app.use(cors());
 
 // API key
-const APIKey = "RGAPI-9a6e955c-5237-4e8e-a36a-cfd478b0c384";
+const APIKey = "INSERT API HERE";
 const APIParam = `api_key=${APIKey}`;
 
 // Helps to see if the render.com server is up 
