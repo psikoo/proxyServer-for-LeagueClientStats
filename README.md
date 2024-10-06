@@ -1,4 +1,4 @@
-
+# ⚠ WIP (add the supported api calls to README)
 # proxyServer-for-LeagueClientStats
 
 proxyServer-for-LeagueClientStats is a simple proxy server made with express and axios used to comply with riot's CORS guidelines. This is a supplementary project to [LeagueClientStats](https://github.com/psikoo/LeagueClientStats).
