@@ -37,7 +37,7 @@ app.get("/getPUUID", async (req, res) => {
     .then(res => {
         return res.data.puuid;
     }).catch((error) => {
-        console.log(`/getPUUID ERROR: ${error.data}`);
+        console.log(`/getPUUID ERROR: ${error}`);
     });
     res.json(PUUID)
 });
@@ -60,7 +60,7 @@ app.get("/getRiotID", async (req, res) => {
     .then(res => {
         return `${res.data.gameName}#${res.data.tagLine}`;
     }).catch((error) => {
-        console.log(`/getRiotID ERROR: ${error.data}`);
+        console.log(`/getRiotID ERROR: ${error}`);
     });
     res.json(RiotID)
 });
@@ -83,7 +83,7 @@ app.get("/getIconAndLevel", async (req, res) => {
     .then(res => {
         return JSON.parse(`{"profileIconId": "${res.data.profileIconId}", "summonerLevel": "${res.data.summonerLevel}"}`);
     }).catch((error) => {
-        console.log(`/getIconAndLevel ERROR: ${error.data}`);
+        console.log(`/getIconAndLevel ERROR: ${error}`);
     });
     res.json(IconAndLevel)
 });
@@ -115,7 +115,7 @@ app.get("/getXGameIDs", async (req, res) => {
     .then(res => {
         return `${res.data}`;
     }).catch((error) => {
-        console.log(`/getXGameIDs ERROR: ${error.data}`);
+        console.log(`/getXGameIDs ERROR: ${error}`);
     });
     res.json(GameIDs)
 });
