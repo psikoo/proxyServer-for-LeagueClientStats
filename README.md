@@ -16,7 +16,7 @@ This script runs with Node.js and npm. To run the script you must install Node.j
 KEY="YOURAPIKEY"
 
 ```
-- Get your TOKEN and CLIENTID [here](https://developer.riotgames.com/).
+- Get your TOKEN and CLIENTID [here](https://developer.riotgames.com/create-app).
 
 - You also need to install the needed dependencies by running the following command:
 
