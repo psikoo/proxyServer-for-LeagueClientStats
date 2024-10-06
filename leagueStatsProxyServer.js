@@ -1,18 +1,19 @@
 var express = require("express");
 var cors = require("cors");
 const axios = require("axios");
+require('dotenv').config()
 
 // User cors mode with express
 var app = express();
 app.use(cors());
 
 // API key
-const APIKey = "INSERT API HERE";
+const APIKey = process.env.KEY;
 const APIParam = `api_key=${APIKey}`;
 
 // Helps to see if the render.com server is up 
 app.get("/", function (req, res) {
-    res.send("The server is up");
+    res.send("🟩 The server is running properly");
 })
 
 // Returns the PUUID of a user
@@ -121,5 +122,5 @@ app.get("/getXGameIDs", async (req, res) => {
 
 // Use port 3000 to connect to the server
 app.listen(3000, function () {
-    console.log("Server started on port 3000");
+    console.log("🟩 Server started on port 3000");
 });
