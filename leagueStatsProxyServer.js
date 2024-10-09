@@ -132,6 +132,6 @@ const options = {
 };
 const server = https.createServer(options, app);
 
-server.listen(3001, () => {
+server.listen(3000, () => {
     console.log("🟩 Server started on port 3001");
 });
