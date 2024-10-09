@@ -1,6 +1,11 @@
 var express = require("express");
+const https = require("https");
+const fs = require("fs");
+const path = require("path");
 var cors = require("cors");
 const axios = require("axios");
+require('dotenv').config()
+
 require('dotenv').config()
 
 // User cors mode with express
@@ -121,6 +126,12 @@ app.get("/getXGameIDs", async (req, res) => {
 });
 
 // Use port 3000 to connect to the server
-app.listen(3000, function () {
-    console.log("🟩 Server started on port 3000");
+const options = {
+    cert: fs.readFileSync(path.join(process.env.SSLPATH, "fullchain.pem")),
+    key: fs.readFileSync(path.join(process.env.SSLPATH, "privkey.pem")),
+};
+const server = https.createServer(options, app);
+
+server.listen(3001, () => {
+    console.log("🟩 Server started on port 3001");
 });

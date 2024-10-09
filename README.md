@@ -14,9 +14,12 @@ This script runs with Node.js and npm. To run the script you must install Node.j
 - Create a ".env" inside the root directory of the project and add the following contents to it:
 ``` env
 KEY="YOURAPIKEY"
+SSLPATH="SSLPATH"
 
 ```
 - Get your TOKEN and CLIENTID [here](https://developer.riotgames.com/create-app).
+
+- SLLPATH should be the path to a folder holding your SSL certificates.
 
 - You also need to install the needed dependencies by running the following command:
 
