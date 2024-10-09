@@ -99,7 +99,7 @@ app.get("/getXGameIDs", async (req, res) => {
     } else if(!queries.PUUID) {
         res.json("no PUUID provided");
     } else if(!queries.count) {
-        res.json("no PUUID provided");
+        res.json("no count provided");
     }
     const region = queries.region;
     const PUUID = queries.PUUID;

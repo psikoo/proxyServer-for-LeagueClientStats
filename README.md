@@ -1,4 +1,4 @@
-# ⚠ WIP (add the supported api calls to README)
+# ⚠ WIP (more routs will be added)
 # proxyServer-for-LeagueClientStats
 
 proxyServer-for-LeagueClientStats is a simple proxy server made with express and axios used to comply with riot's CORS guidelines. This is a supplementary project to [LeagueClientStats](https://github.com/psikoo/LeagueClientStats).
@@ -32,3 +32,11 @@ It starts the proxy server on port 3000.
 ```bash
 .\start.cmd
 ```
+
+## API routs
+
+### GET:
+- /getPUUID?region={region}&gameName={gameName}&tag{tag}
+- /getRiotID?region={region}&PUUID={PUUID}
+- /getIconAndLevel?server={server}&PUUID={PUUID}
+- /getXGameIDs?region={region}&PUUID={PUUID}&count={count}
